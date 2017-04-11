@@ -135,13 +135,13 @@
                   },
                   "osDisk": {
                     "name": "[concat(variables('vmName'), '-os.vhd')]",
-                    "vhd": { "uri": "[concat('http://', parameters('context').storageAccounts.vhd, '.blob.core.windows.net/', variables('storageAccountContainerName'), '/', concat(variables('vmName'), '-os.vhd'))]" },
+                    "vhd": { "uri": "[concat('http://', parameters('context').storageAccounts.vhd, '.blob.core.chinacloudapi.cn/', variables('storageAccountContainerName'), '/', concat(variables('vmName'), '-os.vhd'))]" },
                     "createOption": "FromImage",
                     "caching": "[parameters('source').osDisk.caching]"
                   },
                   "dataDisks": "[reference(variables('dataDiskSettingDeploymentName')).outputs.result.value]",
                   "diagnosticsStorageAccountName": "[parameters('context').storageAccounts.diagnostic]",
-                  "diagnosticsStorageUri": "[concat('http://', parameters('context').storageAccounts.diagnostic, '.blob.core.windows.net')]",
+                  "diagnosticsStorageUri": "[concat('http://', parameters('context').storageAccounts.diagnostic, '.blob.core.chinacloudapi.cn')]",
                   "extensions": "[parameters('source').extensions]"
                 }
               ]
